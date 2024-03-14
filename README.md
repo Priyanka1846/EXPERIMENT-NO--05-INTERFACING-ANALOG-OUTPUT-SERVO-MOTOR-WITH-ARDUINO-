@@ -1,3 +1,8 @@
+###  DATE: 14-03-2024
+###  NAME: PRIYANKA K
+###  ROLL NO : 212223230162
+###  DEPARTMENT: ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
+
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
 
 ### AIM
@@ -47,7 +52,7 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 
 
-CIRCUIT DIAGRAM
+### CIRCUIT DIAGRAM:
  
  
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
@@ -67,8 +72,44 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```
+#include <Servo.h>
+Servo S1;
+int pos = 0;
 
+void setup()
+{
+  S1.attach(9);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  for(pos= 0;pos<=180;pos+=1)
+  {
+    S1.write(pos);
+    delay(20);
+    //Serial.print("Angle = ");
+    Serial.println(pos);
+  }
+  for(pos=180;pos>=0;pos=-1)
+  {
+    S1.write(pos);
+    delay(20);
+    //Serial.print("Angle = ");
+    Serial.println(pos);
+  }
+}
+
+```
+
+### OUTPUT: 
+### Circuit Diagram:
+![image](https://github.com/Priyanka1846/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/139425809/adb67961-ee86-4e18-a206-9e28bcb4f827)
+### Schematic Diagram:
+![image](https://github.com/Priyanka1846/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/139425809/9f4db497-2e63-49f7-82f9-2dbacb2f0ef2)
+### Graph:
+![image](https://github.com/Priyanka1846/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/139425809/5b6a9ba7-fe0d-43cb-8397-1238a77c4e38)
 
 
 
